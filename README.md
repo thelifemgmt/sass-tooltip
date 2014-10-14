@@ -16,7 +16,6 @@ Import the '_ferret-tooltip.scss' file into your project.
 
 Once the mixin is imported, I would suggest compiling it through autoprefixer. You can then use the tooltip in your project by adding the tooltip html.
  
-<br>
 
 Examples
 ---
