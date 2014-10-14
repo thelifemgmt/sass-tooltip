@@ -38,6 +38,6 @@ Once the mixin is imported, you can use the tooltip in your project by adding th
 
 <br>
 
-<b>Note:</b> Modern browsers will render <tooltip> just fine, but if you do not want to chance it, you can easily change the markup to span tags like the example below:
+<b>Note:</b> Modern browsers will render <code><tooltip></code> just fine, but if you do not want to chance it, you can easily change the markup to span tags like the example below:
 
 	<p>Mauris placerat <span class="tooltip">ultricies eget<span class="tip on-left">I am a tooltip message, but I am on the left</span></span> morbi tristique senectus.</p>
