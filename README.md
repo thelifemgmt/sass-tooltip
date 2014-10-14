@@ -3,7 +3,9 @@ Ferret Tooltip
 
 A pure css tooltip from the Ferret Framework.
 
+[View Demo](http://codepen.io/thelifemgmt/pen/mGhpI)
 
+<br>
 
 How to Use
 ---
@@ -13,9 +15,12 @@ Import the '_ferret-tooltip.scss' file into your project.
   @import 'YOUR_DIRECTORY/ferret-tooltip';
 
 
-Once the mixin is imported, you can use the tooltip in your project by adding the appropriate html.
+Once the mixin is imported, I would suggest compiling it through autoprefixer. You can then use the tooltip in your project by adding the tooltip html.
  
 <br>
+
+Examples
+---
 
 <b>Tooltip on Top</b>
 
