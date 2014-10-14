@@ -5,7 +5,6 @@ A pure css tooltip from the Ferret Framework.
 
 [View Demo](http://codepen.io/thelifemgmt/pen/mGhpI)
 
-<br>
 
 How to Use
 ---
