@@ -15,7 +15,8 @@ Import the '_ferret-tooltip.scss' file into your project.
 
 Once the mixin is imported, you can use the tooltip in your project by adding the appropriate html.
  
-
+<br>
+<br>
 
 <b>Tooltip on Top</b>
 
@@ -36,7 +37,8 @@ Once the mixin is imported, you can use the tooltip in your project by adding th
 
 	<p>Mauris placerat <tooltip>ultricies eget<tip class="on-left">I am a tooltip message, but I am on the left</tip></tooltip> morbi tristique senectus.</p>
 
-
+<br>
+<br>
 
 <b>Note:</b> Modern browsers will render <tooltip> just fine, but if you do not want to chance it, you can easily change the markup to span tags like the example below:
 
