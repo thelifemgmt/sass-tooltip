@@ -1,0 +1,144 @@
+// ------------------------------
+// Ferret Tooltip Mixin
+// Written by: Sean Stopnik
+// Email: thelifemgmt@gmail.com
+// ------------------------------
+
+
+// Ferret Tooltip Variables
+$tipPosition: 8px;  // Sets tooltip position
+$tipPositionOffset: 10px;  // Sets tooltip offset for animation
+$tipWidth: 180px;  // Sets the width of the tooltip
+$tipBackgroundColor: #333;  // Sets the background color of the tooltip
+$tipColor: #fff;  // Sets the font color in the tooltip
+$tipPointerSize: 7px;  // Sets the size of the tooltip triangle pointer
+$tipRadius: 3px;  // Sets the border radius of the tooltip
+$tipTransitionSpeed: .25s;  // Sets the tip animation speed
+$linkColor: #e94a34; // Sets the font color of the trigger text
+
+
+// Ferret Tooltip Mixin
+@mixin ferret-tooltip() {
+  $triangle-base: $tipPointerSize solid transparent;
+  $triangle-fill: $tipPointerSize solid $tipBackgroundColor;
+  
+  %triangle-vertical {
+    border-left: $triangle-base;
+    border-right: $triangle-base;
+  }
+  
+  %triangle-horizontal {
+    border-top: $triangle-base;
+    border-bottom: $triangle-base;
+  }
+  
+  tooltip {
+    position: relative;
+    color: $linkColor;
+    cursor: pointer;
+
+    tip {
+      position: absolute;
+      width: $tipWidth;
+      color: $tipColor;
+      font: {
+        size: 14px;
+        style: normal;
+      }
+      line-height: 1.4;
+      text-align: center;
+      border-radius: $tipRadius;
+      background: $tipBackgroundColor;
+      padding: 8px 12px;
+      box-sizing: border-box;
+      cursor: auto;
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: all $tipTransitionSpeed ease-in;
+
+      &:after {
+        position: absolute;
+        width: 0;
+        height: 0;
+        content: '';
+      }
+      
+      &.on-top {
+        bottom: $tipPosition + $tipPositionOffset;
+        left: 0;
+        
+        &:after {
+          bottom: -$tipPointerSize;
+          left: 20px;
+          border-top: $triangle-fill;
+          @extend %triangle-vertical;
+        }
+      }
+      
+      &.on-right {
+        top: -100%;
+        left: 103%;
+        
+        &:after {
+          top: 37%;
+          left: -$tipPointerSize;
+          border-right: $triangle-fill;
+          @extend %triangle-horizontal;
+        }
+      }
+      
+      &.on-bottom {
+        top: $tipPosition + $tipPositionOffset;
+        left: 0;
+        
+        &:after {
+          top: -$tipPointerSize;
+          left: 20px;
+          border-bottom: $triangle-fill;
+          @extend %triangle-vertical;
+        }
+      }
+      
+      &.on-left {
+        top: -100%;
+        right: 103%;
+        
+        &:after {
+          top: 37%;
+          right: -$tipPointerSize;
+          border-left: $triangle-fill;
+          @extend %triangle-horizontal;
+        }
+      }
+    }
+    
+    &:hover {
+      
+      tip {
+        opacity: 1;
+        visibility: visible;
+        
+        &.on-top {
+          transform: translateY(-$tipPositionOffset);
+        }
+        
+        &.on-right {
+          transform: translateX($tipPositionOffset);
+        }
+
+        &.on-bottom {
+          transform: translateY($tipPositionOffset);
+        }
+        
+        &.on-left {
+          transform: translateX(-$tipPositionOffset);
+        }
+      }
+    }
+  }
+}
+
+
+// Ferret Tooltip Include
+@include ferret-tooltip();
