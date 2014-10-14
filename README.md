@@ -15,6 +15,20 @@ First import the '_ferret-tooltip.scss' file into your project.
 
 <b>HTML Examples</b>
 
+  <div class="container">
+		<div class="row">
+			<div class="box-8">
+				YOUR CONTENT
+			</div><!--/.box-8-->
+			
+			<div class="box-8">
+				YOUR CONTENT
+			</div><!--/.box-8-->
+		</div><!--/.row-->
+	</div><!--/.container-->
+
+
+
   <div>
     <h4>Tooltip on Top</h4>
     <p>Mauris placerat eleifend leo habitant <tooltip>ultricies eget<tip class="on-top">I am a tooltip on top</tip></tooltip> morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
